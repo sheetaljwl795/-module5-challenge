@@ -6,7 +6,7 @@ var timeTracker = function() {
     var currentHour = moment().format("h A");
     // var currentHour = moment().hour();
     console.log(currentHour)
-
+ // adding time-block funtion to select the time for past, present, future 
    $(".time-block").each(function() {
         var blockTime = $(this).attr("id");
 
@@ -30,19 +30,19 @@ var timeTracker = function() {
         }
    })
 }
-
+// adding save button to the save the changes on the localstoage.
 var saveContent = function() {
     $(".saveBtn").on("click", function(){
         
         var time = $(this).parent().attr("id");
         var content = $(this).siblings(".description").val();
-
+// localstoage set
         localStorage.setItem(time, content);
 
     })
 }
 
-
+// localstoage get
     $("#8 AM .description").val(localStorage.getItem("8 AM"));
     $("#9 AM .description").val(localStorage.getItem("9 AM"));
     $("#10 AM .description").val(localStorage.getItem("10 AM"));
